@@ -16,5 +16,20 @@ namespace CarRentalApp
         {
             InitializeComponent();
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string customerName = tbCustomerName.Text;
+            string dateOut = dtRented.Value.ToString();
+            string dateIn = dtReturned.Value.ToString();
+            var carType = cbTypeOfCar.SelectedItem.ToString();
+
+            MessageBox.Show(
+                $"Customer Name: {customerName}\n\r"
+                + $"Date Rented: {dateOut}\n\r"
+                + $"Date Returned: {dateIn}\n\r"
+                + $"Car Type: {carType}\n\r"
+                + "Thank you for your business.");
+        }
     }
 }
