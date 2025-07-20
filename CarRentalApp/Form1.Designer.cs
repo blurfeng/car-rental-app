@@ -38,6 +38,8 @@
             this.cbTypeOfCar = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.tbCost = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -136,11 +138,30 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // tbCost
+            // 
+            this.tbCost.Location = new System.Drawing.Point(307, 137);
+            this.tbCost.Name = "tbCost";
+            this.tbCost.Size = new System.Drawing.Size(219, 21);
+            this.tbCost.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Source Han Sans CN Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(307, 112);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 22);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Cost";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbCost);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbTypeOfCar);
@@ -170,6 +191,8 @@
         private System.Windows.Forms.ComboBox cbTypeOfCar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.TextBox tbCost;
+        private System.Windows.Forms.Label label6;
     }
 }
 
