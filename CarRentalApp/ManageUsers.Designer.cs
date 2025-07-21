@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnDeactivateUser = new System.Windows.Forms.Button();
+            this.btnSwitchActive = new System.Windows.Forms.Button();
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.gvRecordList = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.gvRecordList)).BeginInit();
+            this.gvUserList = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gvUserList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRefresh
@@ -48,16 +48,16 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // btnDeactivateUser
+            // btnSwitchActive
             // 
-            this.btnDeactivateUser.Font = new System.Drawing.Font("Source Han Sans CN Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDeactivateUser.Location = new System.Drawing.Point(352, 398);
-            this.btnDeactivateUser.Name = "btnDeactivateUser";
-            this.btnDeactivateUser.Size = new System.Drawing.Size(150, 42);
-            this.btnDeactivateUser.TabIndex = 24;
-            this.btnDeactivateUser.Text = "Deactivate User";
-            this.btnDeactivateUser.UseVisualStyleBackColor = true;
-            this.btnDeactivateUser.Click += new System.EventHandler(this.btnDeactivateUser_Click);
+            this.btnSwitchActive.Font = new System.Drawing.Font("Source Han Sans CN Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSwitchActive.Location = new System.Drawing.Point(352, 398);
+            this.btnSwitchActive.Name = "btnSwitchActive";
+            this.btnSwitchActive.Size = new System.Drawing.Size(150, 42);
+            this.btnSwitchActive.TabIndex = 24;
+            this.btnSwitchActive.Text = "Switch Active";
+            this.btnSwitchActive.UseVisualStyleBackColor = true;
+            this.btnSwitchActive.Click += new System.EventHandler(this.btnSwitchActive_Click);
             // 
             // btnResetPassword
             // 
@@ -91,14 +91,14 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Manage Users";
             // 
-            // gvRecordList
+            // gvUserList
             // 
-            this.gvRecordList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvRecordList.Location = new System.Drawing.Point(12, 94);
-            this.gvRecordList.Name = "gvRecordList";
-            this.gvRecordList.RowTemplate.Height = 23;
-            this.gvRecordList.Size = new System.Drawing.Size(776, 286);
-            this.gvRecordList.TabIndex = 20;
+            this.gvUserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvUserList.Location = new System.Drawing.Point(12, 94);
+            this.gvUserList.Name = "gvUserList";
+            this.gvUserList.RowTemplate.Height = 23;
+            this.gvUserList.Size = new System.Drawing.Size(776, 286);
+            this.gvUserList.TabIndex = 20;
             // 
             // ManageUsers
             // 
@@ -106,14 +106,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnDeactivateUser);
+            this.Controls.Add(this.btnSwitchActive);
             this.Controls.Add(this.btnResetPassword);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.gvRecordList);
+            this.Controls.Add(this.gvUserList);
             this.Name = "ManageUsers";
             this.Text = "ManageUsers";
-            ((System.ComponentModel.ISupportInitialize)(this.gvRecordList)).EndInit();
+            this.Load += new System.EventHandler(this.ManageUsers_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gvUserList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,10 +123,10 @@
         #endregion
 
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnDeactivateUser;
+        private System.Windows.Forms.Button btnSwitchActive;
         private System.Windows.Forms.Button btnResetPassword;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView gvRecordList;
+        private System.Windows.Forms.DataGridView gvUserList;
     }
 }

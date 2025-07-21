@@ -32,13 +32,13 @@
             this.tbLicensePlateNumber = new System.Windows.Forms.TextBox();
             this.tbYear = new System.Windows.Forms.TextBox();
             this.tbVIN = new System.Windows.Forms.TextBox();
-            this.tbModel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tbMake = new System.Windows.Forms.TextBox();
+            this.tbModel = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.tbMake, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tbModel, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 81);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 81);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -69,12 +69,12 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(497, 269);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(540, 269);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tbLicensePlateNumber
             // 
-            this.tbLicensePlateNumber.Location = new System.Drawing.Point(215, 222);
+            this.tbLicensePlateNumber.Location = new System.Drawing.Point(233, 222);
             this.tbLicensePlateNumber.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.tbLicensePlateNumber.Name = "tbLicensePlateNumber";
             this.tbLicensePlateNumber.Size = new System.Drawing.Size(279, 21);
@@ -82,7 +82,7 @@
             // 
             // tbYear
             // 
-            this.tbYear.Location = new System.Drawing.Point(215, 169);
+            this.tbYear.Location = new System.Drawing.Point(233, 169);
             this.tbYear.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.tbYear.Name = "tbYear";
             this.tbYear.Size = new System.Drawing.Size(279, 21);
@@ -90,19 +90,11 @@
             // 
             // tbVIN
             // 
-            this.tbVIN.Location = new System.Drawing.Point(215, 116);
+            this.tbVIN.Location = new System.Drawing.Point(233, 116);
             this.tbVIN.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.tbVIN.Name = "tbVIN";
             this.tbVIN.Size = new System.Drawing.Size(279, 21);
             this.tbVIN.TabIndex = 7;
-            // 
-            // tbModel
-            // 
-            this.tbModel.Location = new System.Drawing.Point(215, 63);
-            this.tbModel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.tbModel.Name = "tbModel";
-            this.tbModel.Size = new System.Drawing.Size(279, 21);
-            this.tbModel.TabIndex = 6;
             // 
             // label1
             // 
@@ -161,18 +153,26 @@
             // 
             // tbMake
             // 
-            this.tbMake.Location = new System.Drawing.Point(215, 10);
+            this.tbMake.Location = new System.Drawing.Point(233, 10);
             this.tbMake.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.tbMake.Name = "tbMake";
             this.tbMake.Size = new System.Drawing.Size(279, 21);
             this.tbMake.TabIndex = 5;
             // 
+            // tbModel
+            // 
+            this.tbModel.Location = new System.Drawing.Point(233, 63);
+            this.tbModel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.tbModel.Name = "tbModel";
+            this.tbModel.Size = new System.Drawing.Size(279, 21);
+            this.tbModel.TabIndex = 6;
+            // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Source Han Sans CN Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnSave.Location = new System.Drawing.Point(24, 375);
+            this.btnSave.Location = new System.Drawing.Point(12, 375);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(259, 42);
+            this.btnSave.Size = new System.Drawing.Size(260, 42);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -181,9 +181,9 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Source Han Sans CN Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCancel.Location = new System.Drawing.Point(324, 375);
+            this.btnCancel.Location = new System.Drawing.Point(372, 375);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(197, 42);
+            this.btnCancel.Size = new System.Drawing.Size(180, 42);
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Source Han Sans CN Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblTitle.Location = new System.Drawing.Point(13, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(138, 69);
             this.lblTitle.TabIndex = 15;
@@ -215,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 450);
+            this.ClientSize = new System.Drawing.Size(564, 441);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnCancel);

@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CarRentalApp;
 
 namespace CarRentalApp
 {
     public partial class MainWindow : Form
     {
         private Login _loginForm;
+        public readonly Users User;
         public readonly string RoleShortName;
 
         public MainWindow()
@@ -20,11 +22,12 @@ namespace CarRentalApp
             InitializeComponent();
         }
 
-        public MainWindow(Login loginForm, string roleShortName)
+        public MainWindow(Login loginForm, Users user)
         {
             InitializeComponent();
             _loginForm = loginForm;
-            RoleShortName = roleShortName;
+            User = user;
+            RoleShortName = user.UserRoles.FirstOrDefault().Roles.shortName;
         }
 
         private void addRentalRecordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,6 +80,14 @@ namespace CarRentalApp
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            if (User.password == Utils.DefaultHashedPassword())
+            {
+                var resetPasswordForm = new ResetPassword(User, false);
+                resetPasswordForm.ShowDialog();
+            }
+
+            var userName = User.username;
+            tsiLoginText.Text = $"Logged in as: {userName}";
             if (RoleShortName != "admin")
             {
                 // 如果不是管理员角色，则隐藏管理用户菜单项。

@@ -28,28 +28,15 @@ namespace CarRentalApp
                 var userName = tbUserName.Text.Trim();
                 var password = tbPassword.Text;
 
-                SHA256 sha = SHA256.Create();
-
-                // 转换输入字符串为字节数组并计算哈希值。
-                // Convert the input string to a byte array and compute the hash.
-                byte[] bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
-
-                // 将字节数组转换为十六进制字符串。并添加到 StringBuilder 中。
-                // Convert the byte array to a hexadecimal string and append it to StringBuilder.
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    sb.Append(bytes[i].ToString("x2"));
-                }
-                var hashedPassword = sb.ToString();
+                // 获取密码的哈希值。
+                // Get the hash value of the password.
+                var hashedPassword = Utils.HashPassword(password);
 
                 var user = _db.Users.FirstOrDefault(u => u.username == userName && u.password == hashedPassword);
 
                 if (user != null)
                 {
-                    var role = user.UserRoles.FirstOrDefault();
-                    var roleShortName = role.Roles.shortName;
-                    var mainWindow = new MainWindow(this, roleShortName);
+                    var mainWindow = new MainWindow(this, user);
                     mainWindow.Show();
                     Hide();
                 }
