@@ -12,18 +12,17 @@ namespace CarRentalApp
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Roles
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
+        public Roles()
         {
             this.UserRoles = new HashSet<UserRoles>();
         }
     
         public int id { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public Nullable<bool> isActive { get; set; }
+        public string name { get; set; }
+        public string shortName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserRoles> UserRoles { get; set; }

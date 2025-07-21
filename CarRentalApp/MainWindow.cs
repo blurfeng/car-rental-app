@@ -13,16 +13,18 @@ namespace CarRentalApp
     public partial class MainWindow : Form
     {
         private Login _loginForm;
+        public readonly string RoleShortName;
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public MainWindow(Login loginForm)
+        public MainWindow(Login loginForm, string roleShortName)
         {
             InitializeComponent();
             _loginForm = loginForm;
+            RoleShortName = roleShortName;
         }
 
         private void addRentalRecordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,9 +41,8 @@ namespace CarRentalApp
         {
             // 确保 ManageVehicleListing 窗体只能打开一个实例。
             // Ensure that only one instance of ManageVehicleListing can be opened.
-            var openForms = Application.OpenForms.Cast<Form>();
-            bool isOpen = openForms.Any(form => form is ManageVehicleListing);
-            if (!isOpen)
+            
+            if (!Utils.FormIsOpen<ManageVehicleListing>())
             {
                 var vehicleListing = new ManageVehicleListing();
                 vehicleListing.MdiParent = this;
@@ -51,14 +52,37 @@ namespace CarRentalApp
 
         private void viewArchiveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var manageRentalRecords = new ManageRentalRecords();
-            manageRentalRecords.MdiParent = this;
-            manageRentalRecords.Show();
+            if (!Utils.FormIsOpen<ManageRentalRecords>())
+            {
+                var manageRentalRecords = new ManageRentalRecords();
+                manageRentalRecords.MdiParent = this;
+                manageRentalRecords.Show();
+            }
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             _loginForm?.Close();
+        }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Utils.FormIsOpen<ManageUsers>())
+            {
+                var manageUsersForm = new ManageUsers();
+                manageUsersForm.MdiParent = this;
+                manageUsersForm.Show();
+            }
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            if (RoleShortName != "admin")
+            {
+                // 如果不是管理员角色，则隐藏管理用户菜单项。
+                // If the user is not an admin, hide the manage users menu item.
+                manageUsersToolStripMenuItem.Visible = false;
+            }
         }
     }
 }
