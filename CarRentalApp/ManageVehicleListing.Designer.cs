@@ -33,16 +33,17 @@
             this.btnAddCar = new System.Windows.Forms.Button();
             this.btnEditCar = new System.Windows.Forms.Button();
             this.btnDeleteCar = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvVehicleList)).BeginInit();
             this.SuspendLayout();
             // 
             // gvVehicleList
             // 
             this.gvVehicleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvVehicleList.Location = new System.Drawing.Point(12, 129);
+            this.gvVehicleList.Location = new System.Drawing.Point(12, 92);
             this.gvVehicleList.Name = "gvVehicleList";
             this.gvVehicleList.RowTemplate.Height = 23;
-            this.gvVehicleList.Size = new System.Drawing.Size(481, 309);
+            this.gvVehicleList.Size = new System.Drawing.Size(776, 286);
             this.gvVehicleList.TabIndex = 0;
             // 
             // label1
@@ -58,9 +59,9 @@
             // btnAddCar
             // 
             this.btnAddCar.Font = new System.Drawing.Font("Source Han Sans CN Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAddCar.Location = new System.Drawing.Point(600, 129);
+            this.btnAddCar.Location = new System.Drawing.Point(12, 396);
             this.btnAddCar.Name = "btnAddCar";
-            this.btnAddCar.Size = new System.Drawing.Size(127, 42);
+            this.btnAddCar.Size = new System.Drawing.Size(150, 42);
             this.btnAddCar.TabIndex = 10;
             this.btnAddCar.Text = "Add New Car";
             this.btnAddCar.UseVisualStyleBackColor = true;
@@ -69,9 +70,9 @@
             // btnEditCar
             // 
             this.btnEditCar.Font = new System.Drawing.Font("Source Han Sans CN Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnEditCar.Location = new System.Drawing.Point(600, 208);
+            this.btnEditCar.Location = new System.Drawing.Point(182, 396);
             this.btnEditCar.Name = "btnEditCar";
-            this.btnEditCar.Size = new System.Drawing.Size(127, 42);
+            this.btnEditCar.Size = new System.Drawing.Size(150, 42);
             this.btnEditCar.TabIndex = 11;
             this.btnEditCar.Text = "Edit Car";
             this.btnEditCar.UseVisualStyleBackColor = true;
@@ -80,19 +81,31 @@
             // btnDeleteCar
             // 
             this.btnDeleteCar.Font = new System.Drawing.Font("Source Han Sans CN Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDeleteCar.Location = new System.Drawing.Point(600, 286);
+            this.btnDeleteCar.Location = new System.Drawing.Point(352, 396);
             this.btnDeleteCar.Name = "btnDeleteCar";
-            this.btnDeleteCar.Size = new System.Drawing.Size(127, 42);
+            this.btnDeleteCar.Size = new System.Drawing.Size(150, 42);
             this.btnDeleteCar.TabIndex = 12;
             this.btnDeleteCar.Text = "Delete Car";
             this.btnDeleteCar.UseVisualStyleBackColor = true;
             this.btnDeleteCar.Click += new System.EventHandler(this.btnDeleteCar_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Source Han Sans CN Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnRefresh.Location = new System.Drawing.Point(638, 396);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(150, 42);
+            this.btnRefresh.TabIndex = 13;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // ManageVehicleListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDeleteCar);
             this.Controls.Add(this.btnEditCar);
             this.Controls.Add(this.btnAddCar);
@@ -114,5 +127,6 @@
         private System.Windows.Forms.Button btnAddCar;
         private System.Windows.Forms.Button btnEditCar;
         private System.Windows.Forms.Button btnDeleteCar;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

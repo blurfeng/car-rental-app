@@ -21,6 +21,6 @@ namespace CarRentalApp
         public Nullable<decimal> Cost { get; set; }
         public Nullable<int> TypeOfCarId { get; set; }
     
-        public virtual TypesOfCars TypesOfCars { get; set; }
+        public virtual TypesOfCar TypesOfCar { get; set; }
     }
 }

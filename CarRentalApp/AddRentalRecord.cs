@@ -80,7 +80,7 @@ namespace CarRentalApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Validation Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //throw;
             }
 
@@ -88,10 +88,20 @@ namespace CarRentalApp
 
         private void AddRentalRecord_Load(object sender, EventArgs e)
         {
-            var carTypes = carRentalEntities.TypesOfCars.ToList();
+            //var carTypes = carRentalEntities.TypesOfCars.ToList();
+
+            // Tips: 这里不支持 $"{car.Make} {car.Model}" 的写法。
+            // here is not supported $"{car.Make} {car.Model}" syntax.
+            var cars = carRentalEntities.TypesOfCar.Select(
+                car => new
+                {
+                    Id = car.Id,
+                    Name = car.Make + " " + car.Model
+                }).ToList();
+
             cbTypeOfCar.DisplayMember = "Name";
-            cbTypeOfCar.ValueMember = "id";
-            cbTypeOfCar.DataSource = carTypes;
+            cbTypeOfCar.ValueMember = "Id";
+            cbTypeOfCar.DataSource = cars;
         }
     }
 }
