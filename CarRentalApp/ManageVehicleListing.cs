@@ -72,7 +72,7 @@ namespace CarRentalApp
 
                 // 打开 AddEditVehicle 窗体，并传入车辆数据。
                 // launch AddEditVehicle window with data.
-                var addEditVehicleForm = new AddEditVehicle(this, car);
+                var addEditVehicleForm = new AddEditVehicle(car, this);
                 addEditVehicleForm.MdiParent = this.MdiParent;
                 addEditVehicleForm.Show();
             }
@@ -96,13 +96,22 @@ namespace CarRentalApp
                 var id = (int)gvVehicleList.SelectedRows[0].Cells["Id"].Value;
                 var car = _db.TypesOfCar.FirstOrDefault(q => q.Id == id);
 
-                // 从数据库中删除车辆记录。
-                // delete vehicle from table.
-                _db.TypesOfCar.Remove(car);
-                _db.SaveChanges();
+                DialogResult result = MessageBox.Show(
+                    $"Are you sure you want to delete the vehicle: {car.Make} {car.Model}?",
+                    "Confirm Delete",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
 
-                // 更新车辆列表。
-                PopulateGrid();
+                if (result == DialogResult.Yes)
+                {
+                    // 从数据库中删除车辆记录。
+                    // delete vehicle from table.
+                    _db.TypesOfCar.Remove(car);
+                    _db.SaveChanges();
+
+                    // 更新车辆列表。
+                    PopulateGrid();
+                }
             }
             catch (Exception ex)
             {

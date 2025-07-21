@@ -74,7 +74,7 @@ namespace CarRentalApp
 
                 // 打开 AddEditVehicle 窗体，并传入车辆数据。
                 // launch AddEditVehicle window with data.
-                var addEditRentalRecord = new AddEditRentalRecord(this, record);
+                var addEditRentalRecord = new AddEditRentalRecord(record, this);
                 addEditRentalRecord.MdiParent = this.MdiParent;
                 addEditRentalRecord.Show();
             }

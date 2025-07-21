@@ -23,7 +23,7 @@ namespace CarRentalApp
         /// 初始化添加新车辆的窗体。
         /// </summary>
         /// <param name="manageVehicleListing"></param>
-        public AddEditVehicle(ManageVehicleListing manageVehicleListing)
+        public AddEditVehicle(ManageVehicleListing manageVehicleListing = null)
         {
             InitializeComponent();
             _manageVehicleListing = manageVehicleListing;
@@ -40,7 +40,7 @@ namespace CarRentalApp
         /// </summary>
         /// <param name="manageVehicleListing"></param>
         /// <param name="carToEdit"></param>
-        public AddEditVehicle(ManageVehicleListing manageVehicleListing, TypesOfCar carToEdit)
+        public AddEditVehicle(TypesOfCar carToEdit, ManageVehicleListing manageVehicleListing = null)
         {
             InitializeComponent();
             _manageVehicleListing = manageVehicleListing;
@@ -97,8 +97,6 @@ namespace CarRentalApp
                     car.Year = int.Parse(tbYear.Text);
                     car.LicensePlateNumber = tbLicensePlateNumber.Text;
 
-                    _db.SaveChanges();
-
                     MessageBox.Show("Vehicle details updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -113,14 +111,16 @@ namespace CarRentalApp
                     };
 
                     _db.TypesOfCar.Add(newCar);
-                    _db.SaveChanges();
 
                     MessageBox.Show("New vehicle added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
+                _db.SaveChanges();
+
                 // 更新管理车辆列表的窗体的车辆列表。
                 // Refresh the vehicle listing in the ManageVehicleListing form.
-                _manageVehicleListing.PopulateGrid();
+                _manageVehicleListing?.PopulateGrid();
+                MessageBox.Show("Operation completed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)

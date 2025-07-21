@@ -19,16 +19,26 @@ namespace CarRentalApp
 
         private void addRentalRecordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var addRentalForm = new AddEditRentalRecord(null);
+            var addRentalForm = new AddEditRentalRecord();
             addRentalForm.MdiParent = this;
-            addRentalForm.Show();
+
+            // ShowDialog 确保窗口打开后只能操作这个窗口，直到它关闭。
+            // ShowDialog ensures that the window is modal, meaning the user must interact with it before returning to the main window.
+            addRentalForm.ShowDialog();
         }
 
         private void manageVehicleListingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vehicleListing = new ManageVehicleListing();
-            vehicleListing.MdiParent = this;
-            vehicleListing.Show();
+            // 确保 ManageVehicleListing 窗体只能打开一个实例。
+            // Ensure that only one instance of ManageVehicleListing can be opened.
+            var openForms = Application.OpenForms.Cast<Form>();
+            bool isOpen = openForms.Any(form => form is ManageVehicleListing);
+            if (!isOpen)
+            {
+                var vehicleListing = new ManageVehicleListing();
+                vehicleListing.MdiParent = this;
+                vehicleListing.Show();
+            }
         }
 
         private void viewArchiveToolStripMenuItem_Click(object sender, EventArgs e)

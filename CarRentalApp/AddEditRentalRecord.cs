@@ -16,7 +16,7 @@ namespace CarRentalApp
         private readonly CarRentalEntities _db;
         private ManageRentalRecords _manageRentalRecords;
 
-        public AddEditRentalRecord(ManageRentalRecords manageRentalRecords)
+        public AddEditRentalRecord(ManageRentalRecords manageRentalRecords = null)
         {
             InitializeComponent();
             _manageRentalRecords = manageRentalRecords;
@@ -26,7 +26,7 @@ namespace CarRentalApp
             _db = new CarRentalEntities();
         }
 
-        public AddEditRentalRecord(ManageRentalRecords manageRentalRecords, CarRentelRecord recordToEdit)
+        public AddEditRentalRecord(CarRentelRecord recordToEdit, ManageRentalRecords manageRentalRecords = null)
         {
             InitializeComponent();
             _manageRentalRecords = manageRentalRecords;
