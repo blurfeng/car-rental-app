@@ -101,9 +101,6 @@ namespace CarRentalApp
                 _db.TypesOfCar.Remove(car);
                 _db.SaveChanges();
 
-                // 刷新表格视图。
-                gvVehicleList.Refresh();
-
                 // 更新车辆列表。
                 PopulateGrid();
             }

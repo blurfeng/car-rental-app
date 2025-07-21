@@ -19,7 +19,7 @@ namespace CarRentalApp
 
         private void addRentalRecordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var addRentalForm = new AddRentalRecord();
+            var addRentalForm = new AddEditRentalRecord(null);
             addRentalForm.MdiParent = this;
             addRentalForm.Show();
         }
@@ -29,6 +29,13 @@ namespace CarRentalApp
             var vehicleListing = new ManageVehicleListing();
             vehicleListing.MdiParent = this;
             vehicleListing.Show();
+        }
+
+        private void viewArchiveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var manageRentalRecords = new ManageRentalRecords();
+            manageRentalRecords.MdiParent = this;
+            manageRentalRecords.Show();
         }
     }
 }

@@ -46,11 +46,20 @@ namespace CarRentalApp
             _manageVehicleListing = manageVehicleListing;
             lblTitle.Text = "Edit Vehicle";
             this.Text = "Edit Vehicle";
-            isEditMode = true;
-            _db = new CarRentalEntities();
 
-            // Populate the fields with the data from the carToEdit object.
-            PopulateFields(carToEdit);
+            if (carToEdit == null)
+            {
+                MessageBox.Show("Please ensure that you selected a valid record to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Close();
+            }
+            else
+            {
+                isEditMode = true;
+                _db = new CarRentalEntities();
+
+                // Populate the fields with the data from the carToEdit object.
+                PopulateFields(carToEdit);
+            }
         }
 
         /// <summary>
